@@ -2,19 +2,22 @@ import random
 
 
 def guess(number):
+    while True:
+        try:
+            user_number = int(input("Guess the number: "))
+        except ValueError:
+            print("It's not a number!")
+            continue
 
-    user_number = int(input("Guess the number: "))
-
-    while user_number != number:
         if user_number < number:
             print('Too small!')
         elif user_number > number:
             print('Too big!')
-        user_number = int(input("Guess the number: "))
-    print('You won!')
+        else:
+            print('You won!')
+            break
 
 number = random.randint(1, 4)
 
+guess(number)
 
-result = guess(number)
-print(result)
