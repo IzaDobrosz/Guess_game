@@ -2,7 +2,9 @@ import random
 
 
 def guess(number):
+
     while True:
+
         try:
             user_number = int(input("Guess the number: "))
         except ValueError:
@@ -17,7 +19,7 @@ def guess(number):
             print('You won!')
             break
 
-number = random.randint(1, 4)
 
-guess(number)
+drawn_number = random.randint(1, 100)
 
+guess(drawn_number)
